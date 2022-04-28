@@ -1,0 +1,18 @@
+service: aws-node-sqs-worker
+frameworkVersion: '3'
+
+provider:
+  name: FILL_ME_IN
+  runtime: nodejs14.x
+  region: FILL_ME_IN
+  
+functions:
+  producer_consumer:
+    handler: FILL_ME_IN
+    events:
+      - httpApi:
+          method: FILL_ME_IN
+          path: /producer_consumer
+
+plugins:
+  - serverless-lift
