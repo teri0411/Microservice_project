@@ -14,3 +14,8 @@
 
 - Step-5: Stock Empty 람다 배포
   - 공장 api에 추가 생산을 요청하는 메시지를 보내는 람다를 만드세요.
+
+
+## 진행과정 확인 
+https://www.notion.so/codestates/91c55fcdcfd2422d916e6fe0373df072
+
