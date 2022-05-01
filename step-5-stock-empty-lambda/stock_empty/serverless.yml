@@ -1,0 +1,41 @@
+service: stock-empty 
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-northeast-2
+
+functions:
+  producer:
+    handler: handler.producer
+    events:
+      - sqs: "arn:aws:sqs:ap-northeast-2:967699999360:step5.fifo"
+
+plugins:
+  - serverless-lift 
+
+	
+
+
+ 
+            # Overrides for generated CloudFormation templates
+            # # Mirrors the CloudFormation docs but uses camel case instead of title case
+            # #
+            # # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html
+            # mainQueueOverride:
+            #   maximumMessageSize: 1024
+            #   ...
+            # deadLetterQueueOverride:
+            #   maximumMessageSize: 1024
+            #   ...
+            # # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html
+            # eventSourceMappingOverride:
+            #   sourceAccessConfigurations:
+            #     - Type: SASL_SCRAM_256_AUTH
+            #       URI: arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName
+            # # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
+            # subscriptionOverride:
+            #   region: ap-southeast-2
+ 
+

@@ -7,9 +7,15 @@ provider:
   region: ap-northeast-2
 
 functions:
-  api:
+  app:
     handler: handler.handler
     events:
       - httpApi:
           method: post
-          path: /api
+          path: /send
+      - httpApi:
+          method: get
+          path: /status
+
+plugins:
+  - serverless-lift 
