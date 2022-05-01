@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const AWS = require('aws-sdk');
-const credentials = new AWS.SharedIniFileCredentials({ profile: FILL_ME_IN });
+const credentials = new AWS.SharedIniFileCredentials({ profile: "default" });
 const sns = new AWS.SNS({ credentials: credentials, region: 'ap-northeast-2' });
 
 const port = 3000;
@@ -30,7 +30,7 @@ app.post('/send', (req, res) => {
             }
         },
         // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#sendMessage-property
-        TopicArn: FILL_ME_IN
+        TopicArn: "arn:aws:sns:ap-northeast-2:967699999360:step3-sns.fifo"
     };
 
     sns.publish(params, function (err, data) {

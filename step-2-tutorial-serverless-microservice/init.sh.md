@@ -9,8 +9,8 @@ aws configure list
 # secret_key     ****************lkTd shared-credentials-file
 #     region           ap-northeast-2      config-file    ~/.aws/config
 
-export QUEUE_URL=FILL_ME_IN && serverless deploy --aws-profile FILL_ME_IN --region ap-northeast-2
 
+export QUEUE_URL=FILL_ME_IN && serverless deploy --aws-profile FILL_ME_IN --region ap-northeast-2
 # Deploying aws-node-sqs-worker to stage dev (ap-northeast-2)
 
 # ✔ Service deployed to stack aws-node-sqs-worker-dev (291s)
@@ -152,7 +152,7 @@ serverless deploy FILL_ME_IN # serverless cli option을 참고하여 아래처�
 QUEUE_URL 설정은 lambda 구성에서 확인 가능합니다.
 
 ```shell
-curl --location --request POST "https://rr298yy7hk.execute-api.ap-northeast-2.amazonaws.com/produce" --header "Content-Type: application/json" \
+curl --location --request POST "https://sqs.ap-northeast-2.amazonaws.com/967699999360/aws-node-sqs-worker-dev-jobs" --header "Content-Type: application/json" \
 --data-raw '{
     "input": 1
 }'

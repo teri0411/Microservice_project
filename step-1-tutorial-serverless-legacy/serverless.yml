@@ -2,17 +2,17 @@ service: aws-node-sqs-worker
 frameworkVersion: '3'
 
 provider:
-  name: FILL_ME_IN
+  name: aws
   runtime: nodejs14.x
-  region: FILL_ME_IN
+  region: ap-northeast-2
   
 functions:
   producer_consumer:
-    handler: FILL_ME_IN
+    handler: legacy-handler.producer_consumer
     events:
       - httpApi:
-          method: FILL_ME_IN
+          method: POST
           path: /producer_consumer
 
 plugins:
-  - serverless-lift
+  - serverless-lift 

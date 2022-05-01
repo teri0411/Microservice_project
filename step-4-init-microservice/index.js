@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
+require('dotenv').config()
 
 const AWS = require("aws-sdk");
 const credentials = new AWS.SharedIniFileCredentials({
-  profile: FILL_ME_IN,
+  profile: "default",
 });
 const sns = new AWS.SNS({ credentials: credentials, region: "ap-northeast-2" });
 
@@ -16,10 +17,10 @@ app.post("/send", (req, res) => {
   var mysql = require("mysql");
   var connection = mysql.createConnection({
     // RDS에서 DB를 생성하고 연결하세요.
-    host: FILL_ME_IN,
-    user: FILL_ME_IN,
-    password: FILL_ME_IN,
-    database: FILL_ME_IN,
+    host: process.env.HOST,
+    user: process.env.USERNAME,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
   });
 
   connection.query(
@@ -67,7 +68,7 @@ app.post("/send", (req, res) => {
             },
           },
           // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#sendMessage-property
-          TopicArn: FILL_ME_IN
+          TopicArn: "arn:aws:sns:ap-northeast-2:967699999360:step3-sns.fifo"
         };
 
         sns.publish(params, function (err, data) {

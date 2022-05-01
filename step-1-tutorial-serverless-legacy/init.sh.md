@@ -150,7 +150,7 @@ serverless deploy --aws-profile FILL_ME_IN --region ap-northeast-2
 
 
 ```shell
-curl -w "@curl-format.txt" --location --request POST 'https://rr298yy7hk.execute-api.ap-northeast-2.amazonaws.com/producer_consumer' \
+curl -w "@curl-format.txt" --location --request POST 'https://fexdu4aqma.execute-api.ap-northeast-2.amazonaws.com/producer_consumer' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "input": 1

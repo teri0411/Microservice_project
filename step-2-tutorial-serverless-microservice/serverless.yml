@@ -8,6 +8,7 @@ provider:
   
 constructs:
   jobs:
+    queueUrl: process.env.QUEUE_URL
     type: queue
     worker:
       handler: handler.consumer
@@ -18,7 +19,7 @@ functions:
     events:
       - httpApi:
           method: post
-          path: /produce
+          path: /producer
     environment: 
       QUEUE_URL: ${construct:jobs.queueUrl} # FILL_ME_IN
 

@@ -5,13 +5,13 @@ function delay(time) {
 }
 
 const producer_consumer = async (event) => {
-  let statusCode = FILL_ME_IN
+  let statusCode = 200
   let message;
   // start of function A
   await delay(1000); // function A 처리속도를 제어하기 위해서 지연을 준다.
   if (!event.body) {
     return {
-      statusCode: FILL_ME_IN,
+      statusCode: 404,
       body: JSON.stringify({
         message: "No body was found",
       }),
