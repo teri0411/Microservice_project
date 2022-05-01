@@ -28,7 +28,7 @@ export default function () {
     'Content-Type': 'application/json',
     'dataType': 'json'
   };
-  const res = http.request('POST', 'https://cclahgf2wb.execute-api.ap-northeast-2.amazonaws.com/produce',
+  const res = http.request('POST', 'https://ndrwcpk3r1.execute-api.ap-northeast-2.amazonaws.com/produce',
   JSON.stringify(payload),  {
     headers: headers,
   });

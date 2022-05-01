@@ -28,7 +28,7 @@ export default function () {
     'Content-Type': 'application/json',
     'dataType': 'json'
   };
-  const res = http.request('POST', 'https://jtjzo8vce5.execute-api.ap-northeast-2.amazonaws.com/produce', // 주소 바꾸세요
+  const res = http.request('POST', 'https://vsv3ub4qqa.execute-api.ap-northeast-2.amazonaws.com/producer', // 주소 바꾸세요
   JSON.stringify(payload),  {
     headers: headers,
   });

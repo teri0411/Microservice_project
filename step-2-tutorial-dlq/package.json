@@ -6,5 +6,8 @@
   "license": "MIT",
   "devDependencies": {
     "serverless-lift": "^1.15.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1124.0"
   }
 }

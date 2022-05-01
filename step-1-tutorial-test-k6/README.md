@@ -14,7 +14,7 @@ Day 1 - Step 2 에서 이어집니다.
 앞서 만든 lambda 함수의 성능을 확인해봅니다. 앞서 Day 1-Step 2에서 curl로 직접 요청을 보내 응답속도를 확인해보았습니다.
 
 ```
-$ curl --location --request POST 'https://k27ch9by51.execute-api.ap-northeast-2.amazonaws.com/produce' \
+$ curl --location --request POST 'https://vsv3ub4qqa.execute-api.ap-northeast-2.amazonaws.com/producer' \
   --header 'Content-Type: application/json' \
   --data-raw '{
     "input": "1"
