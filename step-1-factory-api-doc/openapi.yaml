@@ -8,9 +8,9 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.3
+  version: 1.1.6
 servers:
-- url: http://factory.p3.api.codestates-devops.be:8080/api
+- url: http://factory.p3.api.codestates-devops.be:8080/api/manufacture
 paths:
   /manufacture:
     post:
@@ -54,6 +54,10 @@ components:
           type: string
           example: 홍길동
           description: 추가 생산 요청 담당자
+        MessageAttributeTel:
+          type: string
+          example: 010-0000-0000
+          description: 의뢰담당자 연락처
         CallbackUrl:
           type: string
           description: 생산요청완료시, 공장서버가 콜백할 URL
