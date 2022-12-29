@@ -1,0 +1,21 @@
+service: step4
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-northeast-2
+
+functions:
+  app:
+    handler: handler.handler
+    events:
+      - httpApi:
+          method: post
+          path: /send
+      - httpApi:
+          method: get
+          path: /status
+
+plugins:
+  - serverless-lift 
