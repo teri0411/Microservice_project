@@ -1,0 +1,18 @@
+service: aws-node-sqs-worker
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-northeast-2
+  
+functions:
+  producer_consumer:
+    handler: legacy-handler.producer_consumer
+    events:
+      - httpApi:
+          method: POST
+          path: /producer_consumer
+
+plugins:
+  - serverless-lift 
