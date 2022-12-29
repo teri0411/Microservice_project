@@ -2,7 +2,6 @@
 
 - DevOps님, 내부 개발팀이 요청이 들어왔습니다.
 - "공장 업체와 협의되어 정리된 REST api 설명문서를 웹사이트에서 조회 할 수 있도록 해주세요" 
-- 최종결과물은 이렇게 보여야 합니다. http://factory.p3.api.codestates-devops.be/
 
 - openapi.yaml 로 api spec이 이미 정리가 되었습니다. 
 - 추가적인 필드 MessageAttributeTel를 의뢰 담당자의 연락처를 추가해서, 새롭게 1.1.0 버전을 만들어주세요   
