@@ -29,7 +29,6 @@ app.post('/send', (req, res) => {
                 , "DataType": "String"
             }
         },
-        // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#sendMessage-property
         TopicArn: "arn:aws:sns:ap-northeast-2:967699999360:step3-sns.fifo"
     };
 

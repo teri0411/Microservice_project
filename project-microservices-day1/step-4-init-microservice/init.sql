@@ -1,4 +1,4 @@
-﻿-- RDS에 생성한 데이터베이스 리소스에 아래 table들을 생성하고, 값을 추가해넣으세요.
+﻿-- RDS에 생성한 데이터베이스 리소스에 아래 table들을 생성하고, 값을 추가.
 CREATE TABLE `product` (
     `product_id` BINARY(16)  NOT NULL ,
     -- http://mdr.tta.or.kr/item/1036/property/sku

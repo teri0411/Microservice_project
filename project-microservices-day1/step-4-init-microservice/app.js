@@ -20,7 +20,7 @@ app.post("/send", (req, res) => {
     console.log(process.env.DATABASE)
   var mysql = require("mysql2");
   var connection = mysql.createConnection({
-    // RDS에서 DB를 생성하고 연결하세요.
+    // RDS에서 DB를 생성하고 연결.
     host: process.env.HOST,
     user: process.env.USERNAME,
     password: process.env.PASSWORD,
@@ -71,7 +71,7 @@ app.post("/send", (req, res) => {
               DataType: "String",
             },
           },
-          // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#sendMessage-property
+          
           TopicArn: 'arn:aws:sns:ap-northeast-2:967699999360:step3-sns.fifo'
 
         };
@@ -86,14 +86,3 @@ app.post("/send", (req, res) => {
   );
 });
 app.listen(port, () => console.log(`SNS App listening on port ${port}!`));
-/**
- curl --location --request POST 'http://localhost:3000/send' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "MessageGroupId": "stock-empty-group",
-    "subject": "부산도너츠 재고 부족",
-    "message": "재고 부족",
-    "MessageAttributeProductId": "CP-502101",
-    "MessageAttributeFactoryId": "FF-500293"
-}'
- * */

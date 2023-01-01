@@ -3,7 +3,7 @@ frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: nodejs14.x # FILL_ME_IN
+  runtime: nodejs14.x
   region: ap-northeast-2 
   
 constructs:
@@ -15,13 +15,13 @@ constructs:
 
 functions:
   producer:
-    handler: handler.producer # FILL_ME_IN
+    handler: handler.producer 
     events:
       - httpApi:
           method: post
           path: /producer
     environment: 
-      QUEUE_URL: ${construct:jobs.queueUrl} # FILL_ME_IN
+      QUEUE_URL: ${construct:jobs.queueUrl} 
 
 plugins:
   - serverless-lift

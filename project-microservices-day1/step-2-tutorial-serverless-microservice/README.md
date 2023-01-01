@@ -1,4 +1,4 @@
-# Step-2 : SQS 이용하여 Producer-Consumer 구조 개발 학습
+# Step-2 : SQS 이용하여 Producer-Consumer 구조 개발
 
 init.sh.md 의 내용을 따라하면서 
 

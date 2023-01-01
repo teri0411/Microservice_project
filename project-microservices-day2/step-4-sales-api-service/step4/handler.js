@@ -4,15 +4,9 @@ const app = express();
 require('dotenv').config()
 
 const AWS = require("aws-sdk");
-
 const sns = new AWS.SNS();
 
-
-
 app.use(express.json());
-
-
-
 app.get("/status", (req, res) => res.json({ status: "ok", sns: sns }));
 app.post("/send", (req, res) => {
     console.log(process.env.PASSWORD)
@@ -21,7 +15,7 @@ app.post("/send", (req, res) => {
     console.log(process.env.DATABASE)
   var mysql = require("mysql");
   var connection = mysql.createConnection({
-    // RDS에서 DB를 생성하고 연결하세요.
+    // RDS에서 DB를 생성하고 연결.
     host: process.env.HOST,
     user: process.env.USERNAME,
     password: process.env.PASSWORD,
@@ -72,7 +66,7 @@ app.post("/send", (req, res) => {
               DataType: "String",
             },
           },
-          // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#sendMessage-property
+         
           TopicArn: 'arn:aws:sns:ap-northeast-2:967699999360:stock_empty.fifo'
 
         };
@@ -88,17 +82,3 @@ app.post("/send", (req, res) => {
 });
 
 module.exports.handler = serverless(app);
-
-
-// app.listen(port, () => console.log(`SNS App listening on port ${port}!`));
-/**
- curl --location --request POST 'http://localhost:3000/send' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "MessageGroupId": "stock-empty-group",
-    "subject": "부산도너츠 재고 부족",
-    "message": "재고 부족",
-    "MessageAttributeProductId": "CP-502101",
-    "MessageAttributeFactoryId": "FF-500293"
-}'
- * */

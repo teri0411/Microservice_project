@@ -7,12 +7,12 @@ function delay(time) {
 const sqs = new SQS();
 
 const producer = async (event) => { 
-  let statusCode = 200; // # FILL_ME_IN
+  let statusCode = 200; 
   let message;
   await delay(1000); // function A 처리속도를 제어하기 위해서 지연을 준다.
   if (!event.body) {
     return {
-      statusCode: 400, // # FILL_ME_IN
+      statusCode: 400, 
       body: JSON.stringify({
         message: "No body was found",
       }),
@@ -22,13 +22,13 @@ const producer = async (event) => {
   try {
     await sqs
       .sendMessage({
-        QueueUrl: process.env.QUEUE_URL, // # FILL_ME_IN
+        QueueUrl: process.env.QUEUE_URL, 
         MessageBody: event.body,
         MessageAttributes: {
-          AttributeName: {// # FILL_ME_IN
-            StringValue: "Attribute Value",// # FILL_ME_IN
-            DataType: "String",// # FILL_ME_IN
-          },// # FILL_ME_IN
+          AttributeName: {
+            StringValue: "Attribute Value",
+            DataType: "String",
+          },
         },
       })
       .promise();
@@ -37,7 +37,7 @@ const producer = async (event) => {
     } catch (error) {
     console.log(error);
     message = error;
-    statusCode = 500; // # FILL_ME_IN
+    statusCode = 500; 
   }
 
   return {
@@ -49,7 +49,7 @@ const producer = async (event) => {
 };
 
 const consumer = async (event) => {
-  for (const record of event.Records) { // # FILL_ME_IN
+  for (const record of event.Records) {
     const messageAttributes = record.messageAttributes;
     console.log(
       "Message Attribute: ",

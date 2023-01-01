@@ -22,7 +22,7 @@ let cnt = 1
 export default function () {
   // our HTTP request, note that we are saving the response to res, which can be accessed later
   // cnt++;]
-  const payload = {"input":1, "step": cnt, "tag": "1"}; // cnt 가 기록되도록 추가 하였다 
+  const payload = {"input":1, "step": cnt, "tag": "1"}; // cnt가 기록되도록 추가하였다 
   cnt++;
   const headers = {
     'Content-Type': 'application/json',
